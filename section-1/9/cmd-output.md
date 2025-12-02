@@ -1,0 +1,37 @@
+itzamna@DESKTOP-R0QENLJ MINGW64 ~/Documents/GitHub/u6-docker-k8s (main)
+$ docker --version
+Docker version 29.0.1, build eedd969
+
+itzamna@DESKTOP-R0QENLJ MINGW64 ~/Documents/GitHub/u6-docker-k8s (main)
+$ docker version
+Client:
+ Version:           29.0.1
+ API version:       1.52
+ Go version:        go1.25.4
+ Git commit:        eedd969
+ Built:             Fri Nov 14 16:19:55 2025
+ OS/Arch:           windows/amd64
+ Context:           desktop-linux
+
+Server: Docker Desktop 4.53.0 (211793)
+ Engine:
+  Version:          29.0.1
+  API version:      1.52 (minimum version 1.44)
+  Go version:       go1.25.4
+  Git commit:       198b5e3
+  Built:            Fri Nov 14 16:17:57 2025
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          v2.1.5
+  GitCommit:        fcd43222d6b07379a4be9786bda52438f0dd16a1
+ runc:
+  Version:          1.3.3
+  GitCommit:        v1.3.3-0-gd842d771
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+itzamna@DESKTOP-R0QENLJ MINGW64 ~/Documents/GitHub/u6-docker-k8s (main)
+$ docker build .
+
