@@ -1,3 +1,3 @@
-FROM alpine:3.19
+FROM alpine
 RUN apk add --update redis
 CMD [ "redis-server" ]
