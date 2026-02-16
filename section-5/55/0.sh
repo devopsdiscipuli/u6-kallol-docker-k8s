@@ -40,4 +40,4 @@ $
 
 -------------------------------------------------------------
 
-the node-app-1 container is exiting, whenever browser is sending request to open website
+the node-app-1 container is exiting, whenever browser is sending request to open website 
