@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn linux & docker & k8s
+          Learn with patience & persevernce
         </a>
       </header>
     </div>
