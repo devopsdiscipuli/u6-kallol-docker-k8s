@@ -1,0 +1,29 @@
+pipeline{
+    agent any
+    environment{
+        APP_NAME='my-app'
+    }
+    stages{
+        stage('Checkout'){
+            git url:'https://github.com/username/repo.git',
+                branch:'main'
+        }
+        stage('Build'){
+            steps{
+                sh 'mvn clean package'
+                // bat 'mvn clean package'
+            }
+        }
+        stage('Test'){
+            sh 'mvn test'
+        }
+        post{
+            success{
+                echo "${env.APP_NAME} built and tested successfully!"
+            }
+            failure{
+                echo "Pipeline failed."
+            }
+        }
+    }
+}

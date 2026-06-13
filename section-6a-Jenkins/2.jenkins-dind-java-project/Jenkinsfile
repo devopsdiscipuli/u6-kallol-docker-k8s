@@ -1,29 +1,38 @@
 pipeline{
-    agent any
+    agent{
+        docker{
+            image 'maven:3.9.16-eclipse-temurin-11-alpine'
+            args '-v $HOME/.m2:/root/.m2'
+        }
+    }
     environment{
-        APP_NAME='my-app'
+        APP_NAME='sample-app'
     }
     stages{
-        stage('Checkout'){
-            git url:'https://github.com/username/repo.git',
-                branch:'main'
+        stage(Checkout){
+            steps{
+                git url:'git@github.com:devopsdiscipuli/simple-java-maven-app.git'
+                branch:'master'
+                credentialsId:'u6-java-project'
+            }
         }
         stage('Build'){
             steps{
                 sh 'mvn clean package'
-                // bat 'mvn clean package'
             }
         }
         stage('Test'){
-            sh 'mvn test'
+            steps{
+                sh 'mvn test'
+            }
         }
-        post{
-            success{
-                echo "${env.APP_NAME} built and tested successfully!"
-            }
-            failure{
-                echo "Pipeline failed."
-            }
+    }
+    post{
+        success{
+            echo "${env.APP_NAME} pipeline completed successfully"
+        }
+        failure{
+            echo "${env.APP_NAME} pipeline failed. Check logs"
         }
     }
 }
